@@ -1,0 +1,15 @@
+{
+  "name": "post-its-websocket-server",
+  "version": "1.0.0",
+  "description": "Simple websocket server that echos what it receives to all clients, and stores some state",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aleš Blaznik (adapted by jdheywood)",
+  "license": "ISC",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "ws": "^1.1.1"
+  }
+}
