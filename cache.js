@@ -1,3 +1,4 @@
+'use strict'
 
 let NodeCache = require('node-cache');
 let myCache = new NodeCache();
