@@ -1,12 +1,20 @@
 'use strict'
 
 var WebSocketServer = require('ws').Server;
+var http = require("http")
+var express = require("express")
+var app = express()
+var port = process.env.PORT || 1234
 
-// Forward arg options to WebSockerServer
-var wssOptions = require('minimist')(process.argv);
-delete wssOptions['_'];
+app.use(express.static(__dirname + "/"))
 
-var wss = new WebSocketServer(wssOptions);
+var server = http.createServer(app)
+server.listen(port)
+
+console.log("http server listening on %d", port)
+
+var wss = new WebSocketServer({server: server});
+console.log("websocket server created")
 
 var cache = require('./cache.js');
 

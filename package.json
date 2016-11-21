@@ -11,6 +11,8 @@
   "author": "Aleš Blaznik (adapted by jdheywood)",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.14.0",
+    "http": "0.0.0",
     "minimist": "^1.2.0",
     "node-cache": "^4.1.0",
     "ws": "^1.1.1"
