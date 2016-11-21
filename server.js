@@ -23,6 +23,7 @@ var cache = require('./cache.js');
  */
 wss.on('connection', function (conn) {
     conn.on('message', function (data) {
+        console.log(data)
         cache.test('a', 'b');
         wss.clients.forEach(function each(client) {
             client.send(data);
