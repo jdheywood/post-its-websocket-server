@@ -5,7 +5,8 @@
   "description": "Simple websocket server that echos what it receives to all clients, and stores some state",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js --port=1234",
   },
   "author": "Aleš Blaznik (adapted by jdheywood)",
   "license": "ISC",
