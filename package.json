@@ -1,6 +1,7 @@
 {
   "name": "post-its-websocket-server",
   "version": "1.0.0",
+  "repository": "https://github.com/jdheywood/post-its-websocket-server",
   "description": "Simple websocket server that echos what it receives to all clients, and stores some state",
   "main": "index.js",
   "scripts": {
