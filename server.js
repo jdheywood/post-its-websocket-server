@@ -23,10 +23,24 @@ var cache = require('./cache.js');
  */
 wss.on('connection', function (conn) {
     conn.on('message', function (data) {
-        console.log(data)
-        cache.test('a', 'b');
+        let messageType = cache.message(data)
         wss.clients.forEach(function each(client) {
             client.send(data);
+            if (messageType === 'user') {
+                console.log('Sending all users and notes to new connected user');
+                let users = cache.getUsers();
+                if (users) {
+                    for(let index = 0; index < users.length; index++) {
+                        client.send(JSON.stringify(users[index]));
+                    }
+                }
+                let notes = cache.getNotes();
+                if (notes) {
+                    for(let index = 0; index < notes.length; index++) {
+                        client.send(JSON.stringify(notes[index]));
+                    }
+                }
+            }
         });
     });
 });
