@@ -27,7 +27,7 @@ wss.on('connection', function (conn) {
         wss.clients.forEach(function each(client) {
             client.send(data);
             if (messageType === 'user') {
-                console.log('Sending all users and notes to new connected user');
+                console.log('Sending all users and notes to all users');
                 let users = cache.getUsers();
                 if (users) {
                     for(let index = 0; index < users.length; index++) {
